@@ -57,7 +57,6 @@ int main()
     char test[10];
     printf("introduce la operación: \n");
     scanf("%s",&test);
-
     printf("%s\n", test);
     
     switch (test[0]) {
