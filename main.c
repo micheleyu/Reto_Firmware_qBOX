@@ -19,7 +19,6 @@ void handle_prefix(char *line, int size) {
     int y;
 
     if (size < 3) { printf("Operacion invalida\n"); }
-
     op = line[0];
     line++;
     
@@ -44,7 +43,6 @@ void handle_prefix(char *line, int size) {
         case '/':
             if (y == 0) {
                 printf("No se puede dividir entre cero\n";
-
             }
             printf("%i\n", x / y);
             break;
@@ -56,17 +54,13 @@ bool is_infix(char c) {
 
 int main()
 {
-    char test1[] = "5+6";
-    char test2[] = "5 + 6";
-    char test3[] = "-78";
-    char test4[] = "*2 3";
-    char test5[] = "5 7 /";
-    char test6[] = "60/";
-    char test7[] = "5++";
+    char test[10];
+    printf("introduce la operación: \n");
+    scanf("%s",&test);
 
-    printf("%s\n", test1);
+    printf("%s\n", test);
     
-    switch (test1[0]) {
+    switch (test[0]) {
         case ' ':
             continue;
         case '\t':
@@ -87,15 +81,13 @@ int main()
         case '7':
         case '8':
         case '9':
-            if (is_infix(test1)) {
-                handle_infix(test1, strlen(test1));
+            if (is_infix(test)) {
+                handle_infix(test, strlen(test));
             }
             else {
-                handle_postfix(test1, strlen(test1));
+                handle_postfix(test, strlen(test));
             }
             break;
-
     }
-    
     return 0;
 }
