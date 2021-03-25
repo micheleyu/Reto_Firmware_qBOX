@@ -68,7 +68,7 @@ int main()
         case '-':
         case '*':
         case '/':
-            handle_prefix(test1);
+            handle_prefix(test);
             break;
         case '0':
         case '1':
